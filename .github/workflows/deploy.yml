@@ -41,10 +41,4 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          PID=$(pgrep -f 'java -jar')
-          if [ -n "$PID" ]; then
-            echo "Stopping existing process with PID: $PID"
-            kill $PID
-            sleep 5
-          fi
           nohup java -jar ~/app/*.jar > ~/app/app.log 2>&1 & disown
