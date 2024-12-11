@@ -40,5 +40,4 @@ jobs:
           script: |
             cd ~/app
             chmod +x ./gradlew
-            nohup ./gradlew bootRun > app.log 2>&1 &
-            disown
+            nohup ./gradlew bootRun &
